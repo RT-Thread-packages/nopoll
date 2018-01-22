@@ -24,7 +24,7 @@ LOCAL_CCFLAGS = ''
 if rtconfig.CROSS_TOOL == 'keil':
     LOCAL_CCFLAGS += ' --gnu'
 
-group = DefineGroup('nopoll', src, depend = ['RT_USING_LWIP', 'PKG_USING_NOPOLL'], CPPPATH = CPPPATH, LOCAL_CCFLAGS = LOCAL_CCFLAGS)
+group = DefineGroup('nopoll', src, depend = ['RT_USING_LWIP', 'PKG_USING_NOPOLL', 'PKG_USING_TINYCRYPT'], CPPPATH = CPPPATH, LOCAL_CCFLAGS = LOCAL_CCFLAGS)
 
 examples_src = Split('''
 examples/nopoll_client.c
