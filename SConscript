@@ -15,7 +15,6 @@ nopoll/nopoll_loop.c
 nopoll/nopoll_msg.c
 nopoll/nopoll_conn.c
 nopoll/nopoll_rtthread.c
-sha1/sha1.c
 ''')
 
 CPPPATH = [cwd + '/nopoll', cwd + '/sha1']
