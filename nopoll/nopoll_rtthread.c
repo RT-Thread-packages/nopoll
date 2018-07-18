@@ -40,7 +40,7 @@ static void        nopoll_rtt_mutex_destroy (noPollPtr mutex)
 /*
  * socket send/recv, because these two routines was defined by lwIP macro.
  */
-#ifndef RT_USING_DFS_NET
+#ifndef SAL_USING_POSIX
 
 #ifdef send
 #undef send
