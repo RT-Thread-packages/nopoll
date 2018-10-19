@@ -2,7 +2,7 @@
 #define NOPOLL_RTTHREAD_H__
 
 #include "nopoll.h"
-#include <sha1.h>
+#include <tiny_sha1.h>
 
 unsigned int nopoll_rtt_random(void);
 
