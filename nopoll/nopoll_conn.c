@@ -2502,7 +2502,7 @@ char * nopoll_conn_produce_accept_key (noPollCtx * ctx, const char * websocket_k
 #if NOPOLL_OS_RTTHREAD
 #define SHA_BUF_SZ	20
 	unsigned char   buffer[SHA_BUF_SZ];
-	sha1_context sha1_ctx;
+	tiny_sha1_context sha1_ctx;
 	unsigned int    md_len = SHA_BUF_SZ;
 
 	if (websocket_key == NULL)
@@ -2519,9 +2519,9 @@ char * nopoll_conn_produce_accept_key (noPollCtx * ctx, const char * websocket_k
 	nopoll_log (ctx, NOPOLL_LEVEL_DEBUG, "base key value: %s", accept_key);
 
 	/* now sha-1 */
-    sha1_starts( &sha1_ctx );
-    sha1_update( &sha1_ctx, accept_key, strlen (accept_key) );
-    sha1_finish( &sha1_ctx, buffer );
+    tiny_sha1_starts( &sha1_ctx );
+    tiny_sha1_update( &sha1_ctx, accept_key, strlen (accept_key) );
+    tiny_sha1_finish( &sha1_ctx, buffer );
 
 	nopoll_log (ctx, NOPOLL_LEVEL_DEBUG, "Sha-1 length is: %u", md_len);
 	/* now convert into base64 */
