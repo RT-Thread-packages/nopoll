@@ -109,6 +109,9 @@ NOPOLL_SOCKET     __nopoll_listener_sock_listen_internal      (noPollCtx        
 #endif
 	} /* end switch */
 
+	/* get integer port */
+	int_port  = (uint16_t) atoi (port);
+	
 	memset(&saddr, 0, sizeof(struct sockaddr_in));
 	saddr.sin_family          = AF_INET;
 	saddr.sin_port            = htons(int_port);
@@ -134,8 +137,6 @@ NOPOLL_SOCKET     __nopoll_listener_sock_listen_internal      (noPollCtx        
 	setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &unit, sizeof (unit));
 #endif 
 
-	/* get integer port */
-	int_port  = (uint16_t) atoi (port);
 
 	/* call to bind */
 	tries    = 0;

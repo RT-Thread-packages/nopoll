@@ -1881,7 +1881,6 @@ void          nopoll_conn_shutdown (noPollConn * conn)
 
 	/* shutdown connection here */
 	if (conn->session != NOPOLL_INVALID_SOCKET) {
-	        shutdown (conn->session, SHUT_RDWR);
 		nopoll_close_socket (conn->session);
 	}
 	conn->session = NOPOLL_INVALID_SOCKET;
