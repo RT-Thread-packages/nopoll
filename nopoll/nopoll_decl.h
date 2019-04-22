@@ -178,7 +178,7 @@
 #define NOPOLL_SOCKET          int
 #define NOPOLL_INVALID_SOCKET  -1
 #define NOPOLL_SOCKET_ERROR    -1
-#define nopoll_close_socket(s) do {if ( s >= 0) {lwip_close (s);}} while (0)
+#define nopoll_close_socket(s) do {if ( s >= 0) {closesocket (s);}} while (0)
 
 #endif /* end defined(AXL_OS_UNIX) */
 
