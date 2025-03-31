@@ -121,10 +121,11 @@
 #define __NOPOLL_FILE__            ""
 #endif
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include <string.h>
+
+#include <sys/time.h>
 
 /* only include unistd.h if unix platform is found or gnu gcc compiler
  * is found */
